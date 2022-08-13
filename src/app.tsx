@@ -1,9 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
+import { WelcomePage } from './components/welcome-page/welcome-page';
 
-export default function App() {
-  return (
-    <div>
-      <h1>Rick'n'Morty</h1>
-    </div>
-  );
-}
+const StyledApp = styled.div``;
+
+export const App = () => (
+  <StyledApp>
+    <WelcomePage />
+  </StyledApp>
+);
