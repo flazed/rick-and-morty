@@ -1,47 +1,50 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, { FC, MouseEventHandler, PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import { variables } from '../../styles/variables';
 
-interface Props extends DefaultProps {}
+interface Props extends DefaultProps {
+  onClick: MouseEventHandler<HTMLButtonElement>;
+}
 
 interface DefaultProps {
-  view?: string;
+  view?: 'primary' | 'secondary';
   uppercase?: boolean;
 }
 
 const StyledButton = styled.button<Props>`
+  position: relative;
   padding: 10px;
   background: transparent;
   border: 1px solid transparent;
   border-radius: 10px;
-  text-transform: ${(props) => (props.uppercase ? 'uppercase' : 'lowercase')};
+  outline: none;
+  text-transform: ${({ uppercase }) => (uppercase ? 'uppercase' : 'lowercase')};
   user-select: none;
   font-weight: 600;
   transition: background 0.3s, color 0.3s, border-color 0.3s;
   cursor: pointer;
 
-  ${(props) => {
-    switch (props.view) {
+  ${({ view, theme }) => {
+    switch (view) {
       case 'secondary':
         return `
-          border-color: ${variables.BLUE};
-          color: ${variables.BLUE};
+          border-color: ${theme.colors.SECONDARY};
+          color: ${theme.colors.SECONDARY};
 
           &:hover {
-            background: ${variables.DIRTY_BLUE};
-            border-color: ${variables.DIRTY_BLUE};
-            color: ${variables.WHITE};
+            background: ${theme.colors.DIRTY_BLUE};
+            border-color: ${theme.colors.DIRTY_BLUE};
+            color: ${theme.colors.WHITE};
           }
         `;
       default:
         return `
-          background: ${variables.GREEN};
-          border-color: ${variables.GREEN};
-          color: ${variables.WHITE};
+          background: ${theme.colors.PRIMARY};
+          border-color: ${theme.colors.PRIMARY};
+          color: ${theme.colors.WHITE};
 
           &:hover {
-            background: ${variables.WHITE};
-            color: ${variables.GREEN};
+            background: ${theme.colors.WHITE};
+            color: ${theme.colors.PRIMARY};
           }
         `;
     }
@@ -49,9 +52,12 @@ const StyledButton = styled.button<Props>`
 `;
 
 export const Button: FC<PropsWithChildren<Props>> = (props) => {
-  const { view, uppercase, children } = props;
+  const {
+    onClick, view, uppercase, children,
+  } = props;
+
   return (
-    <StyledButton view={view} uppercase={uppercase}>
+    <StyledButton onClick={onClick} view={view} uppercase={uppercase}>
       {children}
     </StyledButton>
   );
@@ -59,5 +65,5 @@ export const Button: FC<PropsWithChildren<Props>> = (props) => {
 
 Button.defaultProps = {
   view: 'primary',
-  uppercase: false,
+  uppercase: true,
 };

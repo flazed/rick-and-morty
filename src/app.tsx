@@ -1,11 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { WelcomePage } from './components/welcome-page/welcome-page';
+import { GlobalStyles } from './styles/global';
+import { theme } from './styles/theme';
 
 const StyledApp = styled.div``;
 
 export const App = () => (
-  <StyledApp>
-    <WelcomePage />
-  </StyledApp>
+  <ThemeProvider theme={theme}>
+    <GlobalStyles />
+    <StyledApp>
+      <WelcomePage />
+    </StyledApp>
+  </ThemeProvider>
 );
