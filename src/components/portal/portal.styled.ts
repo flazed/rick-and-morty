@@ -9,9 +9,8 @@ export const StyledPortalImage = styled.img<{ isVisible: boolean }>`
   transition: 2s;
   animation: ${spin} 40s infinite linear;
   transition: 2s;
-  ${({ isVisible }) =>
-    !isVisible &&
-    css`
+  ${({ isVisible }) => !isVisible
+    && css`
       width: 100vw;
     `};
 `;

@@ -11,7 +11,9 @@ interface StyledButtonProps {
 }
 
 export const Button: FC<PropsWithChildren<Props>> = (props) => {
-  const { onClick, view = 'primary', uppercase = true, children } = props;
+  const {
+    onClick, view = 'primary', uppercase = true, children,
+  } = props;
 
   return (
     <StyledButton onClick={onClick} view={view} uppercase={uppercase}>

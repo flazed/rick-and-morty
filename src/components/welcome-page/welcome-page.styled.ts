@@ -11,9 +11,8 @@ export const StyledWelcome = styled.div<{ isVisible: boolean }>`
   background-position: center center;
   background-size: cover;
 
-  ${({ isVisible }) =>
-    !isVisible &&
-    css`
+  ${({ isVisible }) => !isVisible
+    && css`
       animation: ${fadeOut} 2s linear;
     `};
 `;
