@@ -1,18 +1,19 @@
-import styled, { css } from 'styled-components';
-import { fadeOutAnimation as fadeOut } from '../../styles/animations';
+import styled from 'styled-components';
 import HouseInside from '../../static/house_inside.png';
 
-export const StyledWelcome = styled.div<{ isVisible: boolean }>`
-  display: flex;
+interface StyledWelcomeProps {
+  isVisible: boolean;
+  state: string;
+}
+
+export const StyledWelcome = styled.div<StyledWelcomeProps>`
+  display: ${({ state }) => (state === 'exited' ? 'none' : 'flex')};
+  opacity: ${({ state }) => (state === 'entered' ? 1 : 0)};
   justify-content: center;
   align-items: center;
   height: 100vh;
   background: url(${HouseInside});
   background-position: center center;
   background-size: cover;
-
-  ${({ isVisible }) => !isVisible
-    && css`
-      animation: ${fadeOut} 2s linear;
-    `};
+  transition: 2s;
 `;
