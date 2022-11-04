@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { spin, glowShadows } from '../../styles/animations';
 
-export const StyledPortalImage = styled.img<{ isVisible: boolean }>`
+export const SPortalImage = styled.img<{ isVisible: boolean }>`
   position: relative;
   width: 30vw;
   min-width: 300px;
@@ -15,7 +15,7 @@ export const StyledPortalImage = styled.img<{ isVisible: boolean }>`
     `};
 `;
 
-export const StyledPortalOverlay = styled.div`
+export const SPortalOverlay = styled.div`
   position: absolute;
   width: 100vw;
   height: 100vh;

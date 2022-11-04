@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-interface StyledButtonProps {
+interface SButtonProps {
   view?: 'primary' | 'secondary';
   uppercase?: boolean;
 }
 
-export const StyledButton = styled.button<StyledButtonProps>`
+export const SButton = styled.button<SButtonProps>`
   position: relative;
   padding: 10px;
   background: transparent;

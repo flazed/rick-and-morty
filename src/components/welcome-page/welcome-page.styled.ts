@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import HouseInside from '../../static/house_inside.png';
 
-interface StyledWelcomeProps {
-  isVisible: boolean;
+interface SWelcomeProps {
   state: string;
 }
 
-export const StyledWelcome = styled.div<StyledWelcomeProps>`
+export const SWelcome = styled.div<SWelcomeProps>`
   display: ${({ state }) => (state === 'exited' ? 'none' : 'flex')};
   opacity: ${({ state }) => (state === 'entered' ? 1 : 0)};
   justify-content: center;
@@ -15,5 +14,5 @@ export const StyledWelcome = styled.div<StyledWelcomeProps>`
   background: url(${HouseInside});
   background-position: center center;
   background-size: cover;
-  transition: 2s;
+  transition: opacity 2s;
 `;

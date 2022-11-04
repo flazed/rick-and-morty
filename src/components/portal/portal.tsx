@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { StyledPortalOverlay, StyledPortalImage } from './portal.styled';
+import { SPortalOverlay, SPortalImage } from './portal.styled';
 import PortalImage from '../../static/portal.png';
 
 interface StyledPortalProps {
@@ -7,7 +7,7 @@ interface StyledPortalProps {
 }
 
 export const Portal: FC<StyledPortalProps> = ({ isVisible }) => (
-  <StyledPortalOverlay>
-    <StyledPortalImage isVisible={isVisible} src={PortalImage} alt="" />
-  </StyledPortalOverlay>
+  <SPortalOverlay>
+    <SPortalImage isVisible={isVisible} src={PortalImage} alt="" />
+  </SPortalOverlay>
 );

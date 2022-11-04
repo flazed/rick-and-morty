@@ -1,11 +1,11 @@
 import React, { FC, MouseEventHandler, PropsWithChildren } from 'react';
-import { StyledButton } from './button.styled';
+import { SButton } from './button.styled';
 
-interface Props extends StyledButtonProps {
+interface Props extends SButtonProps {
   onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
-interface StyledButtonProps {
+interface SButtonProps {
   view?: 'primary' | 'secondary';
   uppercase?: boolean;
 }
@@ -16,8 +16,8 @@ export const Button: FC<PropsWithChildren<Props>> = (props) => {
   } = props;
 
   return (
-    <StyledButton onClick={onClick} view={view} uppercase={uppercase}>
+    <SButton onClick={onClick} view={view} uppercase={uppercase}>
       {children}
-    </StyledButton>
+    </SButton>
   );
 };
