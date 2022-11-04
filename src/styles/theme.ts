@@ -1,0 +1,30 @@
+export const theme = {
+  colors: {
+    PRIMARY: '#72e400',
+    SECONDARY: '#0047ff',
+    WHITE: '#ffffff',
+    GREEN: '#72e400',
+    RED: '#ff0000',
+    BLUE: '#0047ff',
+    YELLOW: '#ffe600',
+    DIRTY_RED: '#e30029',
+    DIRTY_MORGANA: '#e10095',
+    DIRTY_VIOLET: '#ab00e7',
+    DIRTY_NAVU_BLUE: '#3e00ed',
+    DIRTY_BLUE: '#0086e7',
+    DIRTY_AQUA: '#00c5d1',
+    DIRTY_GREEN: '#00b247',
+    DIRTY_LIGHT_GREEN: '#a1da00',
+    DIRTY_YELLOW: '#e7d000',
+    DIRTY_ORANGE: '#f17400',
+  },
+  media: {
+    extraLarge: '(max-width: 1140px)',
+    large: '(max-width: 960px)',
+    medium: '(max-width: 720px)',
+    small: '(max-width: 540px)',
+  },
+  durations: {
+    ms300: 0.3,
+  },
+};

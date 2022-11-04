@@ -1,9 +1,15 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { WelcomePage } from './components/welcome-page/welcome-page';
+import { SApp } from './styles/app.styled';
+import { GlobalStyles } from './styles/global';
+import { theme } from './styles/theme';
 
-export default function App() {
-  return (
-    <div>
-      <h1>Rick'n'Morty</h1>
-    </div>
-  );
-}
+export const App = () => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyles />
+    <SApp>
+      <WelcomePage />
+    </SApp>
+  </ThemeProvider>
+);

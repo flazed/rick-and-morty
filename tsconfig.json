@@ -6,7 +6,8 @@
     "noImplicitAny": true,
     "jsx": "react",
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["types"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "./webpack.config.js"],
   "exclude": ["node_modules"]
