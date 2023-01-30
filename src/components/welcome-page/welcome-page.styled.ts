@@ -6,13 +6,18 @@ interface SWelcomeProps {
 }
 
 export const SWelcome = styled.div<SWelcomeProps>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   display: ${({ state }) => (state === 'exited' ? 'none' : 'flex')};
   opacity: ${({ state }) => (state === 'entered' ? 1 : 0)};
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background: url(${HouseInside});
   background-position: center center;
   background-size: cover;
   transition: opacity 2s;
+  z-index: 999;
 `;

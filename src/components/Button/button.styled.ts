@@ -10,12 +10,12 @@ export const SButton = styled.button<SButtonProps>`
   padding: 10px;
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: ${({ theme }) => theme.borders.buttons};
   outline: none;
   text-transform: ${({ uppercase }) => (uppercase ? 'uppercase' : 'lowercase')};
   user-select: none;
   font-weight: 600;
-  transition: background 0.3s, color 0.3s, border-color 0.3s;
+  transition: ${({ theme }) => theme.durations.ms300};
   cursor: pointer;
 
   ${({ view, theme }) => {

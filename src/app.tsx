@@ -1,15 +1,18 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { WelcomePage } from './components/welcome-page/welcome-page';
+import { Routes, Route } from 'react-router-dom';
+import { HomePage } from './pages/home/home';
 import { SApp } from './styles/app.styled';
 import { GlobalStyles } from './styles/global';
-import { theme } from './styles/theme';
+import { lightTheme } from './styles/theme';
 
 export const App = () => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={lightTheme}>
     <GlobalStyles />
     <SApp>
-      <WelcomePage />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
     </SApp>
   </ThemeProvider>
 );

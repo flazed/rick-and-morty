@@ -1,4 +1,4 @@
-export const theme = {
+const theme = {
   colors: {
     PRIMARY: '#72e400',
     SECONDARY: '#0047ff',
@@ -19,12 +19,27 @@ export const theme = {
     DIRTY_ORANGE: '#f17400',
   },
   media: {
-    extraLarge: '(max-width: 1140px)',
-    large: '(max-width: 960px)',
-    medium: '(max-width: 720px)',
-    small: '(max-width: 540px)',
+    extraExtraLarge: '(min-width: 1400px)',
+    extraLarge: '(min-width: 1200px)',
+    large: '(min-width: 992px)',
+    medium: '(min-width: 768px)',
+    small: '(min-width: 576px)',
   },
   durations: {
-    ms300: 0.3,
+    ms300: '0.3s',
   },
+  borders: {
+    buttons: '10px',
+    fields: '10px',
+  },
+};
+
+export const lightTheme = {
+  bg: '#fafafa',
+  ...theme,
+};
+
+export const darkTheme = {
+  bg: '#222222',
+  ...theme,
 };
