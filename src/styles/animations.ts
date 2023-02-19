@@ -26,4 +26,19 @@ export const glowShadows = (
   }
 `;
 
+export const scaleInOut = (
+  scaleStart: number,
+  scaleEnd: number,
+) => keyframes`
+  0% {
+    transform: scale(${scaleStart})
+  }
+  50% {
+    transform: scale(${scaleEnd})
+  }
+  100% {
+    transform: scale(${scaleStart})
+  }
+`;
+
 export const fadeOutAnimation = keyframes`${fadeOut}`;

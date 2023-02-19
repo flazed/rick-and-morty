@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
     "outDir": "./prod/",
     "strict": true,
     "noImplicitAny": true,
     "jsx": "react",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "typeRoots": ["types"]
+    "target": "es2015",
+    "lib": ["dom", "es2015"],
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "./webpack.config.js"],
-  "exclude": ["node_modules"]
+  "include": ["src", "@types/**/*.ts", "./webpack.config.js"],
 }
