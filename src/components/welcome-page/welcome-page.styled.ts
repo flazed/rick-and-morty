@@ -19,5 +19,5 @@ export const SWelcome = styled.div<SWelcomeProps>`
   background-position: center center;
   background-size: cover;
   transition: opacity 2s;
-  z-index: 999;
+  z-index: 9999;
 `;

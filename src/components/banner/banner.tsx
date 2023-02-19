@@ -7,6 +7,7 @@ interface SingeBanner {
   id: number;
   title: string;
   img: string;
+  link: string;
 }
 
 interface MiltiBanner {
@@ -15,10 +16,10 @@ interface MiltiBanner {
 }
 
 export const Banner: FC<PropsWithChildren<Omit<SingeBanner, 'id'>>> = (props) => {
-  const { title, img } = props;
+  const { title, img, link } = props;
 
   return (
-    <SBanner>
+    <SBanner to={link}>
       <SBannerPreview src={img} />
       <SBannerTitle>{title}</SBannerTitle>
     </SBanner>
@@ -32,7 +33,7 @@ export const Banners: FC<MiltiBanner> = (props) => {
     <SBannersContainer>
       {
         banners.map((banner) => (
-          <Banner key={`${keyName}-${banner.id}`} title={banner.title} img={banner.img} />
+          <Banner key={`${keyName}-${banner.id}`} title={banner.title} img={banner.img} link={banner.link} />
         ))
       }
     </SBannersContainer>

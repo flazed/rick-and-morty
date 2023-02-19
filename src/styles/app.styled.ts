@@ -6,5 +6,6 @@ export const SApp = styled.div`
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  background: ${({ theme }) => theme.bg};
+  background: ${({ theme }) => theme.pageBg};
+  transition: background ${({ theme }) => theme.durations.ms300};
 `;

@@ -1,18 +1,25 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Routes, Route } from 'react-router-dom';
-import { HomePage } from './pages/home/home';
+import { WelcomePage } from './components/welcome-page/welcome-page';
+import { Header } from './components/header/header';
+import { HomeRoutes } from './routes/home.routes';
+import { Footer } from './components/footer/footer';
+import { useAppSelector } from './redux/hook';
 import { SApp } from './styles/app.styled';
 import { GlobalStyles } from './styles/global';
-import { lightTheme } from './styles/theme';
 
-export const App = () => (
-  <ThemeProvider theme={lightTheme}>
-    <GlobalStyles />
-    <SApp>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-    </SApp>
-  </ThemeProvider>
-);
+export const App = () => {
+  const { theme } = useAppSelector((store) => store.appTheme);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <SApp>
+        <WelcomePage />
+        <Header />
+        <HomeRoutes />
+        <Footer />
+      </SApp>
+    </ThemeProvider>
+  );
+};

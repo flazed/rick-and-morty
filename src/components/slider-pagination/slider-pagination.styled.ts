@@ -19,7 +19,7 @@ export const SPaginateCirlce = styled.span<SPaginateCirlceProps>`
   display: block;
   width: 10px;
   height: 10px;
-  border-radius: 50%;
+  border-radius: 50px;
   margin: 5px;
   transition: 0.5s;
   background: ${({ theme }) => theme.colors.WHITE};
@@ -27,5 +27,6 @@ export const SPaginateCirlce = styled.span<SPaginateCirlceProps>`
   ${({ active }) => active
     && css`
       background: ${({ theme }) => theme.colors.PRIMARY};
+      width: 20px;
     `}
 `;

@@ -31,5 +31,6 @@ export const SSlide = styled.div<SSlideProps>`
 export const STitle = styled.span`
   position: relative;
   font-size: 45px;
+  text-align: center;
   z-index: 1;
 `;

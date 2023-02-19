@@ -3,7 +3,6 @@ const theme = {
     PRIMARY: '#72e400',
     SECONDARY: '#0047ff',
     WHITE: '#ffffff',
-    GREEN: '#72e400',
     RED: '#ff0000',
     BLUE: '#0047ff',
     YELLOW: '#ffe600',
@@ -30,16 +29,24 @@ const theme = {
   },
   borders: {
     buttons: '10px',
-    fields: '10px',
+    fields: '7px',
   },
 };
 
 export const lightTheme = {
-  bg: '#fafafa',
+  isDark: false,
+  pageBg: '#fafafa',
+  commonBg: '#f5f5f5',
+  commonBorder: '#d7d7d7',
+  text: '#222',
   ...theme,
 };
 
 export const darkTheme = {
-  bg: '#222222',
+  isDark: true,
+  pageBg: '#222222',
+  commonBg: '#333333',
+  commonBorder: '#444444',
+  text: '#fff',
   ...theme,
 };

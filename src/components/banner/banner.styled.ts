@@ -1,8 +1,20 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const SBannersContainer = styled.div`
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+
+  ${({ theme }) => `
+      @media screen and ${theme.media.medium} {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media screen and ${theme.media.extraLarge} {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    `}
 `;
 
 export const SBannerTitle = styled.span`
@@ -31,7 +43,7 @@ export const SBannerPreview = styled.img`
   transition: ${({ theme }) => theme.durations.ms300};
 `;
 
-export const SBanner = styled.div`
+export const SBanner = styled(Link)`
   position: relative;
   width: 100%;
   min-height: 250px;
@@ -41,20 +53,12 @@ export const SBanner = styled.div`
   color: ${({ theme }) => theme.colors.WHITE};
   font-weight: 700;
   font-size: 2.1em;
-  margin: 0 10px;
   border-radius: ${({ theme }) => theme.borders.fields};
   background-size: cover;
   user-select: none;
   overflow: hidden;
+  text-decoration: none;
   cursor: pointer;
-
-  &:first-of-type {
-    margin-left: 0;
-  }
-
-  &:last-of-type {
-    margin-right: 0;
-  }
 
   &:hover {
     ${SBannerPreview} {
