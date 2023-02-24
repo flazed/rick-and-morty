@@ -12,13 +12,13 @@ import { charactersLink, locationsLink, espisodesLink } from '../../static-data'
 
 export const banners = [
   {
-    id: 1, title: 'Characters', img: CharactersBanner, link: `/${charactersLink}`,
+    id: 1, title: 'Characters', img: CharactersBanner, link: `${charactersLink}`,
   },
   {
-    id: 2, title: 'Locations', img: LocationsBanner, link: `/${locationsLink}`,
+    id: 2, title: 'Locations', img: LocationsBanner, link: `${locationsLink}`,
   },
   {
-    id: 3, title: 'Episodes', img: EpisodesBanner, link: `/${espisodesLink}`,
+    id: 3, title: 'Episodes', img: EpisodesBanner, link: `${espisodesLink}`,
   },
 ];
 
@@ -26,26 +26,26 @@ export const slides = [
   {
     title: 'Rick Sanchez',
     img: RickSlide,
-    path: `/${charactersLink}/1`,
+    path: `${charactersLink}/1`,
   },
   {
     title: 'Morty Smith',
     img: MortySlide,
-    path: `/${charactersLink}/2`,
+    path: `${charactersLink}/2`,
   },
   {
     title: 'Summer Smith',
     img: SummerSlide,
-    path: `/${charactersLink}/3`,
+    path: `${charactersLink}/3`,
   },
   {
     title: 'Beth Smith',
     img: BethSlide,
-    path: `/${charactersLink}/4`,
+    path: `${charactersLink}/4`,
   },
   {
     title: 'Jerry Smith',
     img: JerrySlide,
-    path: `/${charactersLink}/5`,
+    path: `${charactersLink}/5`,
   },
 ];

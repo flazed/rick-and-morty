@@ -9,5 +9,6 @@
     "target": "es2015",
     "lib": ["dom", "es2015"],
   },
-  "include": ["src", "@types/**/*.ts", "./webpack.config.js"],
+  "include": ["src", "./webpack.config.js"],
+  "exclude": ["node_modules"],
 }

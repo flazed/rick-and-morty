@@ -1,6 +1,7 @@
 import React, { createRef, FC } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { HomePage } from '../pages/home/home';
+import { CharactersPage } from '../pages/characters/characters';
 import { charactersLink, locationsLink, espisodesLink } from '../static-data';
 import { RouteObj } from '../types/route/route.type';
 
@@ -9,13 +10,13 @@ export const HomeRoutesList: RouteObj[] = [
     path: '/', name: 'Home', element: <HomePage />, nodeRef: createRef(),
   },
   {
-    path: `/${charactersLink}`, name: 'Characters', element: <HomePage />, nodeRef: createRef(),
+    path: `${charactersLink}`, name: 'Characters', element: <CharactersPage />, nodeRef: createRef(),
   },
   {
-    path: `/${locationsLink}`, name: 'Locations', element: <HomePage />, nodeRef: createRef(),
+    path: `${locationsLink}`, name: 'Locations', element: <HomePage />, nodeRef: createRef(),
   },
   {
-    path: `/${espisodesLink}`, name: 'Episodes', element: <HomePage />, nodeRef: createRef(),
+    path: `${espisodesLink}`, name: 'Episodes', element: <HomePage />, nodeRef: createRef(),
   },
 ];
 
